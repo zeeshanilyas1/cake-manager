@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -43,13 +45,17 @@ public class CakeController {
 	}
 
 	@GetMapping("/cakes/add")
-	public String displayAddCakeForm() throws ServletException {
-		
+	public String displayAddCakeForm(Model model) throws ServletException {
+		model.addAttribute("cake", new CakeEntity());
 		return ADD_CAKE_FORM;
 	}
-	
+
 	@PostMapping("/cakes")
-	public String addNewCake(@ModelAttribute("cake") CakeEntity cake) {
+	public String addNewCake(@Validated @ModelAttribute("cake") CakeEntity cake, BindingResult bindingResult,
+			Model model) {
+		if (bindingResult.hasErrors()) {
+			return ADD_CAKE_FORM;
+		}
 		cakeService.save(cake);
 		return CAKE_ADDED_SUCCESS;
 	}
@@ -59,7 +65,7 @@ public class CakeController {
 		model.addAttribute("cakes", cakeService.getAllCakes());
 		return CAKE_LIST;
 	}
-	
+
 	@GetMapping("/cakes/{id}")
 	public String getSingleCake(Model model, @PathVariable("id") long id) {
 		model.addAttribute("cake", cakeService.getCake(id));
@@ -69,7 +75,7 @@ public class CakeController {
 	@PutMapping("/cakes")
 	public String updateCake(@ModelAttribute("cake") CakeEntity cake) {
 		cakeService.save(cake);
-		
+
 		return CAKE_UPDATED_SUCCESS;
 	}
 

@@ -52,7 +52,6 @@ class CakeControllerTest {
 
 		verify(cakeService).retrieveCakeDataFromServer();
 
-
 		verifyNoMoreInteractions(cakeService);
 	}
 	

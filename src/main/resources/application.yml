@@ -19,6 +19,9 @@ spring:
           github:
             clientId: a192b1babd6fe3151590
             clientSecret: c29a9ebd292feab2f5224e19acc35abc17103e06
+            scope:
+             user: email
+             read: user
 server: 
  port: 8282
 
