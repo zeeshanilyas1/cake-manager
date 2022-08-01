@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    username: sa
+    password:
+    driverClassName: org.hsqldb.jdbc.JDBCDriver
+    url: jdbc:hsqldb:mem:db;DB_CLOSE_DELAY=-1
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        order_updates: true
+        jdbc:
+          batch_size: 20
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: a192b1babd6fe3151590
+            clientSecret: c29a9ebd292feab2f5224e19acc35abc17103e06
+server: 
+ port: 8282
+
+cake:
+ initial-data:
+  url: https://gist.githubusercontent.com/hart88/198f29ec5114a3ec3460/raw/8dd19a88f9b8d24c23d9960f3300d0c917a4f07c/cake.json

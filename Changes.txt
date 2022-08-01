@@ -1,0 +1,18 @@
+Cake Manager Micro Service (fictitious)
+=======================================
+Following Changes have been done on the Project.
+
+1. Converted to Spring boot project
+2. Added Spring Oauth Security using Git Hub
+3. Added Spring MVC with Thymeleaf to create Simple Webpage
+4. Added Proper Services, Controllers And RESTful methods
+5. Use of Spring boot means that APp is running on embedded Tomcat.
+6. Added proper Spring JPA mechanism and HSQL embedded DB
+
+
+To run the project simple Run through you IDE as a Java Application.
+
+To run on command line just use
+
+
+mvn spring:run 

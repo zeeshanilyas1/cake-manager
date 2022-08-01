@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Cakes</title>
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width" />
+<base href="/" />
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div align="center">
+		<h2>List of Available Cakes</h2>
+		<div th:if="${cakes != null and !cakes.empty}">
+			<table>
+				<thead>
+					<tr>
+						<th>Cake</th>
+						<th>Description</th>
+						<th>Price</th>
+						<th>Image</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="cake : ${cakes}">
+						<td><span th:text="${cake.cakeDetail}"></span></td>
+						<td><span th:text="${cake.description}"></span></td>
+						<td><span th:text="${cake.price}"></span></td>
+						<td><span th:text="${cake.image}"></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div th:if="${#lists.isEmpty(cakes)}">
+		No cakes Available.
+		</div>
+	</div>
+
+</body>
+</html>

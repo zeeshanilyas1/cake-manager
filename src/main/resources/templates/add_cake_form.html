@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+    <h1>Cake</h1>
+    <form action="#" th:action="@{/cakes}" method="post" th:object="${cake}">
+        <label>Cake title:</label>
+        <input type="text" th:field="*{cakeDetail}" /><br/>
+ 
+        <label>Description:</label>
+        <textarea rows="5" cols="25" th:field="*{description}"></textarea>
+        <br/>
+  
+        <label>Price</label>
+        <input type="number" th:field="*{price}" /><br/>
+ 
+        <button type="submit">Add New Cake</button>    
+    </form>
+</div>
+
+
+</body>
+</html>
