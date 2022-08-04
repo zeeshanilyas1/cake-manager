@@ -73,6 +73,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>cake-manager-docker</finalName>
 	</build>
 
 </project>
