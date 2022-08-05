@@ -8,7 +8,17 @@ Following Changes have been done on the Project.
 4. Added Proper Services, Controllers And RESTful methods
 5. Use of Spring boot means that APp is running on embedded Tomcat.
 6. Added proper Spring JPA mechanism and HSQL embedded DB
+7. Added GIT HUB Action to be build whenever there is a change done and pushed to GitHub
+8. To see whole pipeline in Action please 
 
+https://github.com/zeeshanilyas1/cake-manager
+
+Click Actions
+There will be list of all the workflows that have been setup and run.
+Click any of the Workflow Run
+You will see  
+ build --> Click build and it will show all the details about the Job that has been run and what it has done.
+ 
 
 To run the project simple Run through you IDE as a Java Application.
 
